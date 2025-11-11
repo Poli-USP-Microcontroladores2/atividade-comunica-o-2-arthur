@@ -94,12 +94,11 @@ int main(void)
 	}
 	uart_irq_rx_enable(uart_dev);
 
-	print_uart("Hello! I'm your echo bot.\r\n");
-	print_uart("Tell me something and press enter:\r\n");
+	print_uart("System ready. Type a message and press enter.\r\n");
 
 	/* indefinitely wait for input from the user */
 	while (k_msgq_get(&uart_msgq, &tx_buf, K_FOREVER) == 0) {
-		print_uart("Echo: ");
+		print_uart("Sending message via uart0: ");
 		print_uart(tx_buf);
 		print_uart("\r\n");
 	}
