@@ -7,8 +7,8 @@ Atividade: Comunicação UART
 
 * Dupla:
 
-  * Integrante 1:
-  * Integrante 2:
+  * Integrante 1: Arthur Junqueira C B - 16855560
+  * Integrante 2: Arthur Londero - 16855595
 
 * Objetivo: implementar, testar e documentar aplicações de comunicação UART baseadas nos exemplos oficiais “echo_bot” e “async_api”, utilizando desenvolvimento orientado a testes, diagramas de sequência D2 e registro de evidências.
 
