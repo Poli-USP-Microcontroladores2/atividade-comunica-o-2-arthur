@@ -64,26 +64,65 @@ O comportamento esperado do código oficial do site do Zephyr é o seguinte: Usu
 
 ## 3.4 Evidências de Funcionamento
 
-Salvar evidências em `docs/evidence/echo_bot/`.
+[Link para o log CT1] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct1.txt
+[Link para o log CT2] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct2.txt
+[Link para o log CT3] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct3.txt
 
-Exemplo de referência no README:
+Trechos ilustrativos:
 
-```
-[Link para o log CT1](docs/evidence/echo_bot/ct1_output.txt)
-```
+Hello! I'm your echo bot. 
+Tell me something and press enter:
+---- Sent utf8 encoded message: "Olá Mundo! (o tal do hello world)\r" ----
+Echo: Olá Mundo! (o tal do hello world)
 
-Adicionar aqui pequenos trechos ilustrativos:
-
-```
-Hello! I'm your echo bot. Tell me something and press enter:
-Echo: Hello World!
-```
+Hello! I'm your echo bot. 
+Tell me something and press enter:
+---- Sent utf8 encoded message: "MEU DEUS JÁ É QUASE FÉRIAS, LOGO EU VOU ESTAR LIVREEEEEEEEEEEEEEEEEEEEEEEE\r" ----
+Echo: MEU DEUS JÁ É QUASE FÉRIAS, LOGO EU VOU ESTAR LIVREEEEEEEEEEEEEEEEEEEEEEEE
 
 ## 3.5 Diagramas de Sequência D2
 
-Vide material de apoio: https://d2lang.com/tour/sequence-diagrams/
+* CT1:
+https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/sequence-diagrams/echo/ct1.png
+shape: sequence_diagram
+User
+App
+UART_Driver
+UART_Hardware
+User -> UART_Hardware: "amogus"
+UART_Hardware -> UART_Driver: RX Interrupt
+UART_Driver -> App: serial_cb()
+App -> UART_Driver: uart_poll_out(char)
+UART_Driver -> UART_Hardware: (envia dados)
+UART_Hardware -> User: "Echo: amogus"
 
-Adicionar arquivos (diagrama completo e o código-base para geração do diagrama) em `docs/sequence-diagrams/`.
+* CT2:
+https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/sequence-diagrams/echo/ct2.png
+shape: sequence_diagram
+User
+App
+UART_Driver
+UART_Hardware
+User -> UART_Hardware: "___"
+UART_Hardware -> UART_Driver: RX Interrupt
+UART_Driver -> App: serial_cb()
+App -> UART_Driver: uart_poll_out(char)
+UART_Driver -> UART_Hardware: (envia dados)
+UART_Hardware -> User: "Echo: ___"
+
+* CT3:
+https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/sequence-diagrams/echo/ct3.png
+shape: sequence_diagram
+User
+App
+UART_Driver
+UART_Hardware
+User -> UART_Hardware: "1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17"
+UART_Hardware -> UART_Driver: RX Interrupt
+UART_Driver -> App: serial_cb()
+App -> UART_Driver: uart_poll_out(char)
+UART_Driver -> UART_Hardware: (envia dados)
+UART_Hardware -> User: "Echo: 1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17"
 
 ---
 
