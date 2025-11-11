@@ -44,14 +44,23 @@ O comportamento esperado do código oficial do site do Zephyr é o seguinte: Usu
 
 ### CT2 – Linha vazia
 
+* Entrada: ""
+* Saída esperada: "Echo:" ou "Echo: "
+* Critério de Aceitação: Se o echo recebido é vazio e enviado imediatamente após a minha mensagem vazia 
+
 ### CT3 – Linha longa
 
+* Entrada: "1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22.23.24.25.26.27.28.29.30.31.32.33.34.35.36.37.38.39.40.41.42.43.44.45.46.47.48.49.50.51.52.53.54.55.56.57.58.59.60.61.62.63.64.65.66.67.68.69.70.71.72.73.74.75.76.77.78.79.80.81.82.83.84.85.86.87.88.89.90.91.92.93.94.95.96.97.98.99.100"
+* Saída esperada: "Echo: 1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22.23.24.25.26.27.28.29.30.31.32.33.34.35.36.37.38.39.40.41.42.43.44.45.46.47.48.49.50.51.52.53.54.55.56.57.58.59.60.61.62.63.64.65.66.67.68.69.70.71.72.73.74.75.76.77.78.79.80.81.82.83.84.85.86.87.88.89.90.91.92.93.94.95.96.97.98.99.100"
+* Critério de Aceitação: Se o echo recebido for igual à mensagem digitada e enviada em apenas uma mensagem sem ser cortada
 (Adicionar mais casos se necessário.)
 
 ## 3.3 Implementação
 
-* Arquivo(s) modificados:
+* Arquivo(s) modificados: main.c
 * Justificativa das alterações:
+* > Para CT2: if ((c == '\n' || c == '\r') && rx_buf_pos > 0) FOI PARA if (c == '\n' || c == '\r'). Dessa forma quando o enter é pressionado, a mensagem é enviada e não há um número mínimo de caractéres que precisa ser atendido para a mensagem ser admitida.
+  > Para CT3: #define MSG_SIZE 32 FOI PARA #define MSG_SIZE 512. Dessa forma a mensagem lida pode ter até 511 caracteres (1 no final para o terminador)
 
 ## 3.4 Evidências de Funcionamento
 
