@@ -42,7 +42,7 @@ void serial_cb(const struct device *dev, void *user_data)
 
 	/* read until FIFO empty */
 	while (uart_fifo_read(uart_dev, &c, 1) == 1) {
-		if ((c == '\n' || c == '\r')) {
+		if ((c == '\n' || c == '\r') && rx_buf_pos >= 0) {
 			/* terminate string */
 			rx_buf[rx_buf_pos] = '\0';
 
