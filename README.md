@@ -32,17 +32,15 @@ docs/
 
 ## 3.1 Descrição do Funcionamento
 
-Descrever aqui de forma textual o comportamento esperado baseado no exemplo oficial.
-Link usado como referência:
-[https://docs.zephyrproject.org/latest/samples/drivers/uart/echo_bot/README.html](https://docs.zephyrproject.org/latest/samples/drivers/uart/echo_bot/README.html)
+O comportamento esperado do código oficial do site do Zephyr é o seguinte: Usuário digita → Pino RX → rx_buf (preenchido por serial callback) → uart_msgq → main loop → print_uart() → Pino TX (uart_poll_out) → Usuário vê echo. Isso é diferente do que foi demonstrado em aula, visto que, nesse caso, há callback quando caracteres chegam pela UART (recepção RX), enquanto no diagrama do professor o callback ocorre quando a transmissão TX é completada. No código oficial, a transmissão usa polling bloqueante, não interrupções.
 
 ## 3.2 Casos de Teste Planejados (TDD)
 
 ### CT1 – Eco básico
 
-* Entrada:
-* Saída esperada:
-* Critério de Aceitação:
+* Entrada: "amogus"
+* Saída esperada: "Echo: amogus"
+* Critério de Aceitação: Se o echo recebido for igual à mensagem digitada
 
 ### CT2 – Linha vazia
 
