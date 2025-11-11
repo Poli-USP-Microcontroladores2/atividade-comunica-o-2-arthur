@@ -59,8 +59,8 @@ O comportamento esperado do código oficial do site do Zephyr é o seguinte: Usu
 
 * Arquivo(s) modificados: main.c
 * Justificativa das alterações:
-* > Para CT2: if ((c == '\n' || c == '\r') && rx_buf_pos > 0) FOI PARA if (c == '\n' || c == '\r'). Dessa forma quando o enter é pressionado, a mensagem é enviada e não há um número mínimo de caractéres que precisa ser atendido para a mensagem ser admitida.
-  > Para CT3: #define MSG_SIZE 32 FOI PARA #define MSG_SIZE 512. Dessa forma a mensagem lida pode ter até 511 caracteres (1 no final para o terminador)
+* Para CT2: if ((c == '\n' || c == '\r') && rx_buf_pos > 0) FOI PARA if (c == '\n' || c == '\r' && rx_buf_pos >= 0). Dessa forma quando o enter é pressionado, a mensagem é enviada e não há um número mínimo de caractéres que precisa ser atendido para a mensagem ser admitida (a não ser que ela seja negativa, o que não faz sentido algum, mas previne esse erro.
+* Para CT3: #define MSG_SIZE 32 FOI PARA #define MSG_SIZE 512. Dessa forma a mensagem lida pode ter até 511 caracteres (1 no final para o terminador)
 
 ## 3.4 Evidências de Funcionamento
 
