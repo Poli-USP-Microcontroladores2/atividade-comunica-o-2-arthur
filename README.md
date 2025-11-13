@@ -52,8 +52,13 @@ O comportamento esperado do código oficial do site do Zephyr é o seguinte: Usu
 
 ### CT3 – Linha longa
 
-* Entrada: "1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22.23.24.25.26.27.28.29.30.31.32.33.34.35.36.37.38.39.40.41.42.43.44.45.46.47.48.49.50.51.52.53.54.55.56.57.58.59.60.61.62.63.64.65.66.67.68.69.70.71.72.73.74.75.76.77.78.79.80.81.82.83.84.85.86.87.88.89.90.91.92.93.94.95.96.97.98.99.100"
-* Saída esperada: "Echo: 1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22.23.24.25.26.27.28.29.30.31.32.33.34.35.36.37.38.39.40.41.42.43.44.45.46.47.48.49.50.51.52.53.54.55.56.57.58.59.60.61.62.63.64.65.66.67.68.69.70.71.72.73.74.75.76.77.78.79.80.81.82.83.84.85.86.87.88.89.90.91.92.93.94.95.96.97.98.99.100"
+* Entrada:
+```
+"1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22.23.24.25.26.27.28.29.30.31.32.33.34.35.36.37.38.39.40.41.42.43.44.45.46.47.48.49.50.51.52.53.54.55.56.57.58.59.60.61.62.63.64.65.66.67.68.69.70.71.72.73.74.75.76.77.78.79.80.81.82.83.84.85.86.87.88.89.90.91.92.93.94.95.96.97.98.99.100"
+```
+* Saída esperada: "Echo:
+```  1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22.23.24.25.26.27.28.29.30.31.32.33.34.35.36.37.38.39.40.41.42.43.44.45.46.47.48.49.50.51.52.53.54.55.56.57.58.59.60.61.62.63.64.65.66.67.68.69.70.71.72.73.74.75.76.77.78.79.80.81.82.83.84.85.86.87.88.89.90.91.92.93.94.95.96.97.98.99.100"
+```
 * Critério de Aceitação: Se o echo recebido for igual à mensagem digitada e enviada em apenas uma mensagem sem ser cortada
 (Adicionar mais casos se necessário.)
 
@@ -71,7 +76,7 @@ O comportamento esperado do código oficial do site do Zephyr é o seguinte: Usu
 * [Link para o log CT3] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct3.txt
 
 ** Trechos ilustrativos:
-
+```
 * Hello! I'm your echo bot. 
 Tell me something and press enter:
 ---- Sent utf8 encoded message: "Olá Mundo! (o tal do hello world)\r" ----
@@ -81,11 +86,13 @@ Echo: Olá Mundo! (o tal do hello world)
 Tell me something and press enter:
 ---- Sent utf8 encoded message: "MEU DEUS JÁ É QUASE FÉRIAS, LOGO EU VOU ESTAR LIVREEEEEEEEEEEEEEEEEEEEEEEE\r" ----
 Echo: MEU DEUS JÁ É QUASE FÉRIAS, LOGO EU VOU ESTAR LIVREEEEEEEEEEEEEEEEEEEEEEEE
+```
 
 ## 3.5 Diagramas de Sequência D2
 
 * CT1:
 * https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/sequence-diagrams/echo/ct1.png
+```
 shape: sequence_diagram
 User
 App
@@ -97,9 +104,11 @@ UART_Driver -> App: serial_cb()
 App -> UART_Driver: uart_poll_out(char)
 UART_Driver -> UART_Hardware: (envia dados)
 UART_Hardware -> User: "Echo: amogus"
+```
 
 * CT2:
 * https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/sequence-diagrams/echo/ct2.png
+```
 shape: sequence_diagram
 User
 App
@@ -111,9 +120,11 @@ UART_Driver -> App: serial_cb()
 App -> UART_Driver: uart_poll_out(char)
 UART_Driver -> UART_Hardware: (envia dados)
 UART_Hardware -> User: "Echo: ___"
+```
 
 * CT3:
 * https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/sequence-diagrams/echo/ct3.png
+```
 shape: sequence_diagram
 User
 App
@@ -125,6 +136,7 @@ UART_Driver -> App: serial_cb()
 App -> UART_Driver: uart_poll_out(char)
 UART_Driver -> UART_Hardware: (envia dados)
 UART_Hardware -> User: "Echo: 1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17"
+```
 
 ---
 
