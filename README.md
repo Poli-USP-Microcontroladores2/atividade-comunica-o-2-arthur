@@ -177,6 +177,7 @@ UART_Hardware -> User: "Echo: 1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17"
 * CT1-4
 * https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/sequence-diagrams/async/d2(3).png
 
+```
 # Define a forma como um diagrama de sequência
 shape: sequence_diagram
 
@@ -235,7 +236,7 @@ MCU_A -> MCU_A: "Main_Loop: Lê rx_state (obtém 3)"
 
 # A atualiza seus LEDs
 MCU_A -> MCU_A: "Main_Loop: Atualiza LEDs (prioridade local)"
-
+```
 
 ---
 
