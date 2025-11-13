@@ -1,0 +1,87 @@
+{
+  "configurations": [
+    {
+      "name": "windows-gcc-arm64",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/include",
+        "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/src",
+        "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/.pio/build/frdm_kl25z/zephyr/include/generated/zephyr",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/include",
+        "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/.pio/build/frdm_kl25z/zephyr/include/generated",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/soc/nxp/kinetis",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/soc/nxp/kinetis/kl2x",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/soc/nxp/kinetis/common",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis/CMSIS/Core/Include",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis_6/CMSIS/Core/Include",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/modules/cmsis_6",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk/devices/MKL25Z4",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk/devices/MKL25Z4/drivers",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/common",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/i2c",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/lpsci",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/port",
+        ""
+      ],
+      "browse": {
+        "limitSymbolsToIncludedHeaders": true,
+        "path": [
+          "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/include",
+          "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/src",
+          "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/.pio/build/frdm_kl25z/zephyr/include/generated/zephyr",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/include",
+          "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/.pio/build/frdm_kl25z/zephyr/include/generated",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/soc/nxp/kinetis",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/soc/nxp/kinetis/kl2x",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/soc/nxp/kinetis/common",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis/CMSIS/Core/Include",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis_6/CMSIS/Core/Include",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/modules/cmsis_6",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk/devices/MKL25Z4",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk/devices/MKL25Z4/drivers",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/common",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/i2c",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/lpsci",
+          "C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/port",
+          ""
+        ]
+      },
+      "defines": [
+        "PLATFORMIO=60118",
+        "CPU_MKL25Z128VLK4",
+        "KERNEL",
+        "K_HEAP_MEM_POOL_SIZE=0",
+        "NDEBUG",
+        "__LINUX_ERRNO_EXTENSIONS__",
+        "__PROGRAM_START",
+        "__ZEPHYR__=1",
+        ""
+      ],
+      "cStandard": "c99",
+      "forcedInclude": [
+        "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/.pio/build/frdm_kl25z/zephyr/include/generated/zephyr/autoconf.h",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/include/zephyr/toolchain/zephyr_stdint.h",
+        ""
+      ],
+      "compilerPath": "C:/Users/junqu/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc.exe",
+      "compilerArgs": [
+        "-mcpu=cortex-m0plus",
+        "-mthumb",
+        "-mabi=aapcs",
+        "-mfp16-format=ieee",
+        "-isystem",
+        "C:/Users/junqu/.platformio/packages/framework-zephyr/lib/libc/common/include",
+        "-isystem",
+        "C:/Users/junqu/Documents/PlatformIO/Projects/amogus9/.pio/build/frdm_kl25z/modules/picolibc/picolibc/include",
+        "-isystem",
+        "c:/users/junqu/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/8.2.1/include",
+        "-isystem",
+        "c:/users/junqu/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/8.2.1/include-fixed",
+        ""
+      ],
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-gcc-arm64"
+    }
+  ],
+  "version": 4
+}
