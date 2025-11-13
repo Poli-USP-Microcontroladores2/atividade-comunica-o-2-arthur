@@ -87,18 +87,13 @@ int main(void)
     for (;;) {
         bool input_high = gpio_pin_get_dt(&in_ptb0);
 
-        /* Se PTB0 estiver alto, liga o LED e envia '1' */
+        /* Atualiza o estado imediatamente ao mudar o botão */
         if (input_high && !last_input) {
             atomic_set(&led_state, true);
-            uint8_t msg = '1';
-            uart_fifo_fill(uart_dev, &msg, 1);
         }
 
-        /* Se PTB0 estiver baixo e o LED estava ligado, envia '0' */
         if (!input_high && last_input) {
             atomic_set(&led_state, false);
-            uint8_t msg = '0';
-            uart_fifo_fill(uart_dev, &msg, 1);
         }
 
         last_input = input_high;
@@ -109,7 +104,8 @@ int main(void)
         gpio_pin_set_dt(&led0, led_on ? 1 : 0);
         k_mutex_unlock(&led_mutex);
 
-        k_msleep(50);
+        /* Leitura rápida do botão (10 ms) */
+        k_msleep(10);
     }
 
     return 0;
