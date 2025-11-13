@@ -1,0 +1,1 @@
+"mcuboot":"C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/bootloader/mcuboot":"C:/Users/junqu/.platformio/packages/framework-zephyr/_pio/bootloader/mcuboot/boot/zephyr/sysbuild"
