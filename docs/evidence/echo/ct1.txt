@@ -1,0 +1,19 @@
+Hello! I'm your echo bot.
+Tell me something and press enter:
+*** Booting Zephyr OS build zephyr-v40200 ***
+---- Sent utf8 encoded message: "amogus\r" ----
+Echo: amogus
+---- Sent utf8 encoded message: "minecraft\r" ----
+Echo: minecraft
+---- Sent utf8 encoded message: "bom dia\r" ----
+Echo: bom dia
+---- Sent utf8 encoded message: "boa noite\r" ----
+Echo: boa noite
+---- Sent utf8 encoded message: "boa tarde\r" ----
+Echo: boa tarde
+---- Sent utf8 encoded message: "YIPEEEEEEEE\r" ----
+Echo: YIPEEEEEEEE
+---- Sent utf8 encoded message: "aço\r" ----
+Echo: aço
+---- Sent utf8 encoded message: "bobalhão\r" ----
+Echo: bobalhão

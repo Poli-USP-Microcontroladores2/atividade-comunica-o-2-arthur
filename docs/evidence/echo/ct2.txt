@@ -1,0 +1,23 @@
+Hello! I'm your echo bot.
+Tell me something and press enter:
+*** Booting Zephyr OS build zephyr-v40200 ***
+---- Sent utf8 encoded message: "\r" ----
+Echo: 
+---- Sent utf8 encoded message: "\r" ----
+Echo: 
+---- Sent utf8 encoded message: "\r" ----
+Echo: 
+---- Sent utf8 encoded message: "\r" ----
+Echo: 
+---- Sent utf8 encoded message: "\r" ----
+Echo: 
+---- Sent utf8 encoded message: "\r" ----
+Echo: 
+---- Sent utf8 encoded message: "\r" ----
+Echo: 
+---- Sent utf8 encoded message: "\r" ----
+Echo: 
+---- Sent utf8 encoded message: "\r" ----
+Echo: 
+---- Sent utf8 encoded message: "\r" ----
+Echo:
