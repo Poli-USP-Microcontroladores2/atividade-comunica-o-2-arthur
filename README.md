@@ -64,18 +64,18 @@ O comportamento esperado do código oficial do site do Zephyr é o seguinte: Usu
 
 ## 3.4 Evidências de Funcionamento
 
-[Link para o log CT1] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct1.txt
-[Link para o log CT2] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct2.txt
-[Link para o log CT3] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct3.txt
+* [Link para o log CT1] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct1.txt
+* [Link para o log CT2] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct2.txt
+* [Link para o log CT3] https://github.com/Poli-USP-Microcontroladores2/atividade-comunica-o-2-arthur/blob/main/docs/evidence/echo/ct3.txt
 
-Trechos ilustrativos:
+** Trechos ilustrativos:
 
-Hello! I'm your echo bot. 
+* Hello! I'm your echo bot. 
 Tell me something and press enter:
 ---- Sent utf8 encoded message: "Olá Mundo! (o tal do hello world)\r" ----
 Echo: Olá Mundo! (o tal do hello world)
 
-Hello! I'm your echo bot. 
+* Hello! I'm your echo bot. 
 Tell me something and press enter:
 ---- Sent utf8 encoded message: "MEU DEUS JÁ É QUASE FÉRIAS, LOGO EU VOU ESTAR LIVREEEEEEEEEEEEEEEEEEEEEEEE\r" ----
 Echo: MEU DEUS JÁ É QUASE FÉRIAS, LOGO EU VOU ESTAR LIVREEEEEEEEEEEEEEEEEEEEEEEE
@@ -126,32 +126,41 @@ UART_Hardware -> User: "Echo: 1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17"
 
 ---
 
-# 4. Etapa 2 – Async API (Transmissão/Recepção Assíncrona)
+# 4. Etapa 2 – "Async" com interrupção (Transmissão/Recepção)  
 
 ## 4.1 Descrição do Funcionamento
 
-Descrever o comportamento esperado de forma textual, especialmente com a alternância TX/RX.
-Link usado como referência:
-[https://docs.zephyrproject.org/latest/samples/drivers/uart/async_api/README.html](https://docs.zephyrproject.org/latest/samples/drivers/uart/async_api/README.html)
+Similar ao do UART Echo, mas o microcontrolador fica permanentemente em um estado de recebimento ou envio de dados (5s cada), com a CPU sempre ocupada por esse. Foi feito de tal forma que há possibilidade do microcontrolador se auto alimentar com informações geradas aleatoriamente ou receber informações de outra placa (relação escravo-mestre nesse caso). O código utilizado é baseado no Echo da etapa 3.
 
 ## 4.2 Casos de Teste Planejados (TDD)
 
 ### CT1 – Transmissão de pacotes a cada 5s
 
+* Teste realizado:
+* Resultado esperado: 
+* Critério de Aceitação: 
+
 ### CT2 – Recepção
+
+* Teste realizado: 
+* Resultado esperado: 
+* Critério de Aceitação:
 
 ### CT3 – Verificação de timing dos 5s
 
-(Adicionar mais casos se necessário.)
+* Teste realizado: Cronometragem manual do tempo entre o início da recepção e da transmissão e o fim delas
+* Resultado esperado: Todos os tempos registrados próximos da casa de 5000ms
+* Critério de Aceitação: Todos os tempos registrados próximos da casa de 5000ms
 
 ## 4.3 Implementação
 
-* Arquivos modificados:
-* Motivos/Justificativas:
+* Arquivos modificados: main.c
+* Motivos/Justificativas: O código base do UART Echo não possui, em sua forma base, um período de recepção e envio de dados ou pinos para troca de informações entre duas placas, então estes tiveram de ser adicionados.
+* ADENDO: como a estrutura do main branch do github já havia sido feita previamente, os códigos, evidências e diagramas de sequência foram postos nas pastas com título de "async", apesar desse projeto não ser propriamente uma implementação async.
 
 ## 4.4 Evidências de Funcionamento
 
-Salvar em `docs/evidence/async_api/`.
+AAA
 
 Exemplo:
 
@@ -174,13 +183,11 @@ Data (ASCII): Hello
 
 ## 4.5 Diagramas de Sequência D2
 
-Vide material de referência: https://d2lang.com/tour/sequence-diagrams/
-
-Adicionar arquivos (diagrama completo e o código-base para geração do diagrama) em `docs/sequence-diagrams/`.
+AAA
 
 ---
 
 # 5. Conclusões da Dupla
 
-* O que deu certo:
-* O que foi mais desafiador:
+* O que deu certo: UART Echo funcionou de forma quase perfeita direto da caixa, sendo feitas apenas duas modificações no código para tratar de inconsistências em mensagens sem nada e mensagens muito grandes. A implementação dos períodos de recepção e transmissão e de seus respectivos pinos também foi um sucesso.
+* O que foi mais desafiador: Antes de realizar uma comunicação entre duas placas com interrupção (Async com interrupção), as inúmeras tentativas para fazer o código original do Async API foram extremamente desafiadoras e não retornaram nenhum fruto. As etapas que foram realmente efetivadas (Echo e Interrupção) também tiveram seus desafios, principalmente na parte de entendimento do código e comunicação entre as placas, mas foi possível realizá-las.
